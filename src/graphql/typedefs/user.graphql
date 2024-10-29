@@ -2,7 +2,7 @@ type User {
     id: String!
     email: String!
     username: String
-    posts: [Posts!]
+    posts: [Post!]
 }
 
 type Query {
