@@ -42,9 +42,10 @@ jobs:
           npm run build
           cp -r src/graphql/typedefs build/graphql
 
-      - name: Deploy with Serverless Framework
-        uses: serverless/github-action@v4
-        with:
-          args: deploy
+      - name: Deploy to AWS
         env:
-          SERVERLESS_ACCESS_TOKEN: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: us-east-1
+          SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        run: npm run deploy
