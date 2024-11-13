@@ -3,8 +3,8 @@ import { join } from "path";
 import { userResolvers } from "./resolvers/user.resolver";
 import { postResolvers } from "./resolvers/post.resolver";
 
-const userTypes = readFileSync(join(__dirname, "./typeDefs/user.graphql"), "utf-8");
-const postTypes = readFileSync(join(__dirname, "./typeDefs/post.graphql"), "utf-8");
+const userTypes = readFileSync(join(__dirname, "./typedefs/user.graphql"), "utf-8");
+const postTypes = readFileSync(join(__dirname, "./typedefs/post.graphql"), "utf-8");
 
 export const typeDefs = `
     ${userTypes}
